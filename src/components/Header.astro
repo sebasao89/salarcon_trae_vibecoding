@@ -1,0 +1,88 @@
+---
+// No props needed for this component
+---
+
+<header class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-teal-dark to-teal-light rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
+            <span class="text-white font-bold text-xl">S</span>
+          </div>
+          <div class="hidden sm:block">
+            <span class="text-xl font-bold text-teal-dark">Slarcon</span>
+            <span class="text-sm text-charcoal block leading-none">Tech Solutions</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="/" class="text-charcoal hover:text-teal-dark px-3 py-2 text-sm font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-teal-dark">
+            Inicio
+          </a>
+          <a href="/servicios" class="text-charcoal hover:text-teal-dark px-3 py-2 text-sm font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-teal-dark">
+            Servicios
+          </a>
+          <a href="#about" class="text-charcoal hover:text-teal-dark px-3 py-2 text-sm font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-teal-dark">
+            Nosotros
+          </a>
+          <a href="/contacto" class="bg-coral hover:bg-coral-soft text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg">
+            Contacto
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" id="mobile-menu-button" class="text-charcoal hover:text-teal-dark focus:outline-none focus:text-teal-dark transition-colors duration-200">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-light-gray rounded-lg mt-2">
+        <a href="/" class="text-charcoal hover:text-teal-dark block px-3 py-2 text-base font-medium transition-colors duration-200">
+          Inicio
+        </a>
+        <a href="/servicios" class="text-charcoal hover:text-teal-dark block px-3 py-2 text-base font-medium transition-colors duration-200">
+          Servicios
+        </a>
+        <a href="#about" class="text-charcoal hover:text-teal-dark block px-3 py-2 text-base font-medium transition-colors duration-200">
+          Nosotros
+        </a>
+        <a href="/contacto" class="bg-coral hover:bg-coral-soft text-white block px-3 py-2 rounded-lg text-base font-medium transition-all duration-200 text-center">
+          Contacto
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Slarcon Tech Solutions - Transformando el Futuro Digital"
+  description="Especialistas en hogares inteligentes, soluciones empresariales, ciberseguridad y consultoría tecnológica. Transformamos tu hogar y empresa con tecnología de vanguardia."
+  keywords="hogares inteligentes, automatización, soluciones empresariales, ciberseguridad, consultoría tecnológica, IoT, smart home, PYME, transformación digital"
+>
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <ContactForm />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Global styles for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f5f5f3;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #0a4f5a;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b3dcd4;
+  }
+</style>
