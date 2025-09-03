@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: process.env.CI ? 'https://username.github.io' : 'http://localhost:4321',
+  site: process.env.CI ? 'https://sebasao89.github.io' : 'http://localhost:4321',
   base: process.env.CI ? '/trae-astro-vice-coding/' : '/',
   output: 'static',
   build: {
