@@ -239,25 +239,28 @@
     if (newsletterForm) {
       newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
+        const emailInput = newsletterForm.querySelector('input[type="email"]') as HTMLInputElement;
+        const email = emailInput?.value || '';
         
         // Simulate subscription (replace with actual API call)
         console.log('Newsletter subscription:', email);
         
         // Show success message
-        const button = this.querySelector('button');
-        const originalText = button.textContent;
-        button.textContent = '¡Suscrito!';
-        button.classList.add('bg-teal-dark');
-        button.classList.remove('bg-coral');
-        
-        // Reset after 3 seconds
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove('bg-teal-dark');
-          button.classList.add('bg-coral');
-          this.reset();
-        }, 3000);
+        const button = newsletterForm.querySelector('button') as HTMLButtonElement;
+        if (button) {
+          const originalText = button.textContent;
+          button.textContent = '¡Suscrito!';
+          button.classList.add('bg-teal-dark');
+          button.classList.remove('bg-coral');
+          
+          // Reset after 3 seconds
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.classList.remove('bg-teal-dark');
+            button.classList.add('bg-coral');
+            (newsletterForm as HTMLFormElement).reset();
+          }, 3000);
+        }
       });
     }
   });

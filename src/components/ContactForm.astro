@@ -238,10 +238,10 @@
 <script>
   // Contact form handling
   document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
+    const form = document.getElementById('contact-form') as HTMLFormElement;
     const successMessage = document.getElementById('success-message');
 
-    if (form) {
+    if (form && successMessage) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         

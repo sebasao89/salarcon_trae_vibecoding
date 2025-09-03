@@ -82,7 +82,8 @@ import DarkModeToggle from './DarkModeToggle.astro';
       
       // Close mobile menu when clicking outside
       document.addEventListener('click', function(event) {
-        if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+        const target = event.target as Node;
+        if (target && !mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
           mobileMenu.classList.add('hidden');
         }
       });
