@@ -4,16 +4,24 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
 # Build outputs
 dist/
 .astro/
+.output/
+.vercel/
+.netlify/
+.firebase/
 
 # Environment variables
 .env
 .env.local
 .env.production
 .env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # macOS-specific files
 .DS_Store
@@ -98,3 +106,42 @@ jspm_packages/
 # Temporary folders
 tmp/
 temp/
+
+# Astro specific
+.astro/
+
+# TypeScript
+*.tsbuildinfo
+
+# Package manager lock files (keep only one)
+# yarn.lock
+# pnpm-lock.yaml
+
+# IDE and editor files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store?
+ehthumbs_vista.db
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+
+# Storybook
+storybook-static/
+
+# Local development
+.local
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
