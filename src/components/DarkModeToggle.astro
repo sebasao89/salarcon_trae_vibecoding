@@ -58,11 +58,8 @@
       html.classList.remove('dark');
     }
     
-    // Toggle functionality with better mobile support
-    function toggleTheme(e: Event) {
-      e.preventDefault();
-      e.stopPropagation();
-      
+    // Simple toggle functionality
+    function toggleTheme() {
       if (html.classList.contains('dark')) {
         html.classList.remove('dark');
         localStorage.setItem('theme', 'light');
@@ -72,13 +69,8 @@
       }
     }
     
-    // Remove existing event listeners to prevent duplicates
-    toggle.removeEventListener('click', toggleTheme);
-    toggle.removeEventListener('touchend', toggleTheme);
-    
-    // Add event listeners for both click and touch events
-    toggle.addEventListener('click', toggleTheme, { passive: false });
-    toggle.addEventListener('touchend', toggleTheme, { passive: false });
+    // Add click event listener
+    toggle.addEventListener('click', toggleTheme);
     
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -92,24 +84,13 @@
     });
   }
   
-  // Initialize with multiple fallbacks for mobile compatibility
-  function safeInit() {
-    // Wait a bit more for mobile devices
-    setTimeout(() => {
-      initDarkMode();
-    }, 100);
-  }
-  
-  // Initialize on page load with multiple event listeners
+  // Initialize on DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', safeInit);
+    document.addEventListener('DOMContentLoaded', initDarkMode);
   } else {
-    safeInit();
+    initDarkMode();
   }
   
-  // Re-initialize on navigation (for SPA-like behavior)
-  document.addEventListener('astro:page-load', safeInit);
-  
-  // Additional fallback for mobile devices
-  window.addEventListener('load', safeInit);
+  // Re-initialize on Astro page navigation
+  document.addEventListener('astro:page-load', initDarkMode);
 </script>
