@@ -45,8 +45,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
