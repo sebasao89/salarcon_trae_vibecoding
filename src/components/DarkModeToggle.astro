@@ -43,6 +43,11 @@
     const toggle = document.getElementById('dark-mode-toggle');
     const html = document.documentElement;
     
+    if (!toggle) {
+      console.warn('Dark mode toggle button not found');
+      return;
+    }
+    
     // Check for saved theme preference or default to system preference
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -53,8 +58,11 @@
       html.classList.remove('dark');
     }
     
-    // Toggle functionality
-    toggle?.addEventListener('click', () => {
+    // Toggle functionality with better mobile support
+    function toggleTheme(e: Event) {
+      e.preventDefault();
+      e.stopPropagation();
+      
       if (html.classList.contains('dark')) {
         html.classList.remove('dark');
         localStorage.setItem('theme', 'light');
@@ -62,7 +70,15 @@
         html.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       }
-    });
+    }
+    
+    // Remove existing event listeners to prevent duplicates
+    toggle.removeEventListener('click', toggleTheme);
+    toggle.removeEventListener('touchend', toggleTheme);
+    
+    // Add event listeners for both click and touch events
+    toggle.addEventListener('click', toggleTheme, { passive: false });
+    toggle.addEventListener('touchend', toggleTheme, { passive: false });
     
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -76,13 +92,24 @@
     });
   }
   
-  // Initialize on page load
+  // Initialize with multiple fallbacks for mobile compatibility
+  function safeInit() {
+    // Wait a bit more for mobile devices
+    setTimeout(() => {
+      initDarkMode();
+    }, 100);
+  }
+  
+  // Initialize on page load with multiple event listeners
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDarkMode);
+    document.addEventListener('DOMContentLoaded', safeInit);
   } else {
-    initDarkMode();
+    safeInit();
   }
   
   // Re-initialize on navigation (for SPA-like behavior)
-  document.addEventListener('astro:page-load', initDarkMode);
+  document.addEventListener('astro:page-load', safeInit);
+  
+  // Additional fallback for mobile devices
+  window.addEventListener('load', safeInit);
 </script>
