@@ -2,7 +2,7 @@
 // No props needed for this component
 ---
 
-<section class="relative bg-gradient-to-br from-teal-dark via-teal-light to-tiffany min-h-screen flex items-center overflow-hidden">
+<section class="relative bg-gradient-to-br from-teal-dark via-teal-light to-tiffany dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 min-h-screen flex items-center overflow-hidden transition-colors duration-300">
   <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-10">
     <div class="absolute top-10 left-10 w-20 h-20 border-2 border-white rounded-full animate-bounce-slow"></div>
@@ -15,27 +15,27 @@
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Content -->
       <div class="text-center lg:text-left animate-fade-in">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white dark:text-gray-100 mb-6 leading-tight transition-colors duration-300">
           Transformamos tu 
           <span class="text-coral bg-white/10 px-4 py-2 rounded-lg inline-block mt-2">
             Futuro Digital
           </span>
         </h1>
         
-        <p class="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
+        <p class="text-xl text-white/90 dark:text-gray-200 mb-8 max-w-2xl leading-relaxed transition-colors duration-300">
           Simplificamos y potenciamos la vida de las personas y el crecimiento de las empresas a través de 
           <strong class="text-coral">soluciones tecnológicas integrales y personalizadas</strong>.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <a href="/servicios" class="bg-coral hover:bg-coral-soft text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center group">
+          <a href="/servicios" class="bg-coral hover:bg-coral-soft dark:bg-coral-soft dark:hover:bg-coral text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center group">
             Descubre Nuestros Servicios
             <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
           
-          <a href="/contacto" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+          <a href="/contacto" class="bg-white/10 backdrop-blur-sm hover:bg-white/20 dark:bg-gray-800/50 dark:hover:bg-gray-700/70 text-white border-2 border-white/30 dark:border-gray-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center">
             Contactanos
           </a>
         </div>
@@ -43,16 +43,16 @@
         <!-- Stats -->
         <div class="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-white/20">
           <div class="text-center">
-            <div class="text-3xl font-bold text-coral mb-2">100+</div>
-            <div class="text-white/80 text-sm">Proyectos Exitosos</div>
+            <div class="text-3xl font-bold text-coral dark:text-coral-soft mb-2 transition-colors duration-300">100+</div>
+            <div class="text-white/80 dark:text-gray-300 text-sm transition-colors duration-300">Proyectos Exitosos</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-coral mb-2">5+</div>
-            <div class="text-white/80 text-sm">Años de Experiencia</div>
+            <div class="text-3xl font-bold text-coral dark:text-coral-soft mb-2 transition-colors duration-300">5+</div>
+            <div class="text-white/80 dark:text-gray-300 text-sm transition-colors duration-300">Años de Experiencia</div>
           </div>
           <div class="text-center">
-            <div class="text-3xl font-bold text-coral mb-2">24/7</div>
-            <div class="text-white/80 text-sm">Soporte Técnico</div>
+            <div class="text-3xl font-bold text-coral dark:text-coral-soft mb-2 transition-colors duration-300">24/7</div>
+            <div class="text-white/80 dark:text-gray-300 text-sm transition-colors duration-300">Soporte Técnico</div>
           </div>
         </div>
       </div>
@@ -61,66 +61,66 @@
       <div class="relative animate-slide-up">
         <div class="relative z-10">
           <!-- Tech Icons Grid -->
-          <div class="grid grid-cols-3 gap-6 max-w-md mx-auto">
+          <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
             <!-- Smart Home -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Hogares Inteligentes</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Hogares Inteligentes</div>
             </div>
             
             <!-- Business Solutions -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Soluciones Empresariales</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Soluciones Empresariales</div>
             </div>
             
             <!-- Cloud Services -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Servicios en la Nube</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Servicios en la Nube</div>
             </div>
             
             <!-- Security -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Ciberseguridad</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Ciberseguridad</div>
             </div>
             
             <!-- Automation -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Automatización</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Automatización</div>
             </div>
             
             <!-- Support -->
-            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+            <div class="bg-white/10 backdrop-blur-sm dark:bg-white/20 p-8 rounded-2xl text-center hover:bg-gray-800/20 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105">
               <div class="w-12 h-12 mx-auto mb-3 bg-coral rounded-lg flex items-center justify-center">
                 <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                 </svg>
               </div>
-              <div class="text-white text-sm font-medium text-center flex items-center justify-center">Soporte 24/7</div>
+              <div class="text-white dark:text-gray-200 text-sm font-medium text-center flex items-center justify-center transition-colors duration-300">Soporte 24/7</div>
             </div>
           </div>
         </div>

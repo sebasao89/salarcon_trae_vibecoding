@@ -1,10 +1,11 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+/* Tailwind CSS imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 
 /* Base styles */
 @layer base {
@@ -16,6 +17,12 @@
   body {
     @apply text-charcoal bg-white;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark mode body styles */
+  .dark body {
+    @apply text-white bg-charcoal;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -33,11 +40,11 @@
 @layer components {
   /* Button styles */
   .btn-primary {
-    @apply bg-coral hover:bg-coral-soft text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-coral hover:bg-coral-soft text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl dark:bg-coral-soft dark:hover:bg-coral;
   }
   
   .btn-secondary {
-    @apply bg-teal-dark hover:bg-teal-light text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-teal-dark hover:bg-teal-light text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl dark:bg-teal-light dark:hover:bg-teal-dark;
   }
   
   .btn-outline {
@@ -46,33 +53,33 @@
   
   /* Card styles */
   .card {
-    @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+    @apply bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 dark:bg-charcoal dark:text-white dark:shadow-charcoal/20;
   }
   
   .card-dark {
-    @apply bg-charcoal text-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+    @apply bg-charcoal text-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 dark:bg-white dark:text-charcoal;
   }
   
   /* Form styles */
   .form-input {
-    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white;
+    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white dark:border-tiffany/50 dark:bg-charcoal dark:text-white dark:placeholder-tiffany/60;
   }
   
   .form-textarea {
-    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white resize-none;
+    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white resize-none dark:border-tiffany/50 dark:bg-charcoal dark:text-white dark:placeholder-tiffany/60;
   }
   
   .form-select {
-    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white;
+    @apply w-full px-4 py-3 border border-tiffany/30 rounded-lg focus:ring-2 focus:ring-teal-light focus:border-teal-light transition-colors duration-200 bg-white dark:border-tiffany/50 dark:bg-charcoal dark:text-white;
   }
   
   /* Navigation styles */
   .nav-link {
-    @apply text-charcoal hover:text-coral transition-colors duration-200 font-medium;
+    @apply text-charcoal hover:text-coral transition-colors duration-200 font-medium dark:text-white dark:hover:text-coral-soft;
   }
   
   .nav-link-mobile {
-    @apply block text-charcoal hover:text-coral transition-colors duration-200 font-medium py-2;
+    @apply block text-charcoal hover:text-coral transition-colors duration-200 font-medium py-2 dark:text-white dark:hover:text-coral-soft;
   }
   
   /* Section styles */

@@ -56,6 +56,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Theme Color -->
     <meta name="theme-color" content="#0A4F5A" />
     
+    <!-- Dark mode initialization script -->
+    <script is:inline>
+      // Initialize dark mode before page renders to prevent flash
+      (function() {
+        const theme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    
     <title>{title}</title>
   </head>
   
