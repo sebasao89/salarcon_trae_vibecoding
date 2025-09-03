@@ -4,8 +4,8 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://username.github.io', // Cambiar 'username' por tu nombre de usuario de GitHub
-  base: '/trae-astro-vice-coding/', // Nombre del repositorio
+  site: process.env.CI ? 'https://username.github.io' : 'http://localhost:4321',
+  base: process.env.CI ? '/trae-astro-vice-coding/' : '/',
   output: 'static',
   build: {
     assets: 'assets'
@@ -14,5 +14,6 @@ export default defineConfig({
     css: {
       transformer: 'postcss'
     }
-  }
+  },
+  trailingSlash: 'ignore'
 });
