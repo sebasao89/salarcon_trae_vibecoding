@@ -5,5 +5,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://sebasao89.github.io',
-  base: process.env.NODE_ENV === 'production' ? '/trae-astro-vice-coding' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/salarcon_trae_vibecoding' : '/',
 })
